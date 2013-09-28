@@ -19,8 +19,18 @@ Or install it yourself as:
 
 ## Usage
 
-To learn resque workers
+    $ bundle console
+    $ worker = ZestWorker::GverifyWorker.new
+    $ worker.work
+    $ TERM_CHILD=1 QUEUES=verification_service rake resque:work 
 
+## Requirements
+
+Install and start redis server
+
+    $ gem install redis
+    $ redis-server
+    
 ## Contributing
 
 1. Fork it
