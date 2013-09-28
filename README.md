@@ -23,6 +23,11 @@ Or install it yourself as:
     $ worker = ZestWorker::GverifyWorker.new
     $ worker.work
     
+You can also explicitly call the Resque#perform method
+by passing it the correct parameter.
+    
+    $ ZestWorker::GverifyWorker.peform { :account_number '1111', :routing_number => '000000000' }
+    
 In command line run the rake task for resque to run the job
     
     $ TERM_CHILD=1 QUEUES=verification_service rake resque:work 
